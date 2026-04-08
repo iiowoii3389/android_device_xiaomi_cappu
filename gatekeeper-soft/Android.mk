@@ -8,7 +8,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := libSoftGatekeeper
+LOCAL_MODULE := gatekeeper.default
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_OWNER := mtk
 LOCAL_MODULE_TAGS := optional
@@ -35,7 +35,5 @@ LOCAL_SHARED_LIBRARIES += \
     liblog
 
 LOCAL_STATIC_LIBRARIES := libscrypt_static
-
-LOCAL_MODULE_SYMLINKS := gatekeeper.default.so
 
 include $(BUILD_SHARED_LIBRARY)

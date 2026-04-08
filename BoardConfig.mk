@@ -103,7 +103,6 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 
 # Graphics
-BOARD_EGL_CFG := $(DEVICE_PATH)/egl.cfg
 TARGET_USES_HWC2 := true
 TARGET_USES_HWC2ON1ADAPTER := false
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -146,5 +145,3 @@ WIFI_DRIVER_FW_PATH_P2P := "/system/firmware/fw_bcmdhd.bin"
 
 BOARD_USE_SOFT_GATEKEEPER := true
 
-# Inherit from the proprietary version
--include vendor/xiaomi/cappu/BoardConfigVendor.mk

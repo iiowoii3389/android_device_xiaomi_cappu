@@ -1,5 +1,7 @@
 # Copyright (C) 2018 The LineageOS Project
 
+DEVICE_PATH := device/xiaomi/cappu
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -7,18 +9,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
-endif
-
-#PRODUCT_ENFORCE_RRO_TARGETS += framework-res
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal large xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-02-05
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=16m \
@@ -42,6 +37,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.faketouch.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.faketouch.xml \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
@@ -71,7 +67,23 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.protect.rc \
     init.recovery.mt8173.rc \
+    init.sensor_1_0.rc \
     ueventd.mt8173.rc
+
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
+
+# Light
+PRODUCT_PACKAGES += \
+    lights.mt8173 \
+    android.hardware.light@2.0-impl-mediatek \
+    android.hardware.light@2.0-service-mediatek
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -98,60 +110,10 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@2.0-impl \
+#    $(LOCAL_PATH)/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
 
-# Bluetooth
 PRODUCT_PACKAGES += \
-    audio.a2dp.default
-
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
-# Display
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service
-
-# DRM
-PRODUCT_PACKAGES += \
-    libdrm \
-    libmockdrmcryptoplugin \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
-
-# FM
-PRODUCT_PACKAGES += \
-    android.hardware.broadcastradio@1.1-impl \
-    android.hardware.broadcastradio@1.1-service
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0-java
-
-# Binder
-PRODUCT_PACKAGES += \
-    libhidltransport \
-    libhwbinder
-
-# Light
-PRODUCT_PACKAGES += \
-    lights.default \
-    android.hardware.light@2.0-service
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    keymaster.default \
-    android.hardware.keymaster@3.0-service
+    android.hardware.audio.effect@2.0-impl
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -181,24 +143,32 @@ PRODUCT_PACKAGES += \
     libion \
     libcap
 
+# DRM
+PRODUCT_PACKAGES += \
+    libdrm \
+    libmockdrmcryptoplugin \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
+
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # Sensor
 PRODUCT_PACKAGES += \
-    libsensorndkbridge
-
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    libSoftGatekeeper \
-    gatekeeper.default \
-    android.hardware.gatekeeper@1.0-service
-
-# VNDK
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/vndk-compat/ld.config.compat.txt:system/etc/ld.config.compat.txt \
-#    $(LOCAL_PATH)/vndk-compat/vndk-compat.rc:system/etc/init/vndk-compat.rc
+    libsensorndkbridge \
+    android.hardware.sensors@1.0-impl-mediatek \
+    android.hardware.sensors@1.0-service-mediatek
 
 # VNDK-SP:
 PRODUCT_PACKAGES += \
@@ -217,11 +187,22 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     android.hardware.wifi@1.0-service
 
-#power
+# Keymaster
 PRODUCT_PACKAGES += \
-    power.default \
-    android.hardware.power@1.0-service
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
+# Sensor
+PRODUCT_PACKAGES += \
+    libsensorndkbridge \
+    android.hardware.sensors@1.0-impl-mediatek \
+    android.hardware.sensors@1.0-service-mediatek
+
+PRODUCT_PACKAGES += \
+    gatekeeper.default
+
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 $(call inherit-product-if-exists, vendor/xiaomi/cappu/cappu-vendor.mk)
-
