@@ -2,6 +2,6 @@
 #define _BDROID_BUILDCFG_H
 
 #define BLE_VND_INCLUDED TRUE
-#define BTM_DEF_LOCAL_NAME   "CUBE X"
+#define BTM_DEF_LOCAL_NAME   "Xiaomi Mi Pad 3"
 
 #endif

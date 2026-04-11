@@ -4,6 +4,8 @@ vendor/etc/ecc_list.xml
 vendor/etc/spn-conf-op09.xml
 vendor/etc/cdma_ecc_list_OP09.xml
 vendor/etc/init/init.thermal.rc
+vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc
+vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
 vendor/etc/init/muxreport.rc
 vendor/etc/init/vendor.mediatek.hardware.power@1.1-service.rc
 vendor/etc/init/nvram_daemon.rc
@@ -50,7 +52,9 @@ vendor/bin/wifi2agps
 vendor/bin/md_ctrl
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.0-service
 vendor/bin/hw/vendor.mediatek.hardware.power@1.1-service
+vendor/bin/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-service
 vendor/bin/hw/android.hardware.audio@2.0-service-mediatek
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-mediatek
 vendor/bin/kph
 vendor/bin/spir2cl
 vendor/bin/thermal
@@ -151,11 +155,13 @@ vendor/lib/libcam.exif.v3.so
 vendor/lib/libMtkOmxCore.so
 vendor/lib/vendor.mediatek.hardware.pq@2.0_vendor.so
 vendor/lib/hw/hwcomposer.mt8173.so
+vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
 vendor/lib/hw/vulkan.mt8173.so
 vendor/lib/hw/android.hardware.audio@2.0-impl-mediatek.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.0-impl.so
 vendor/lib/hw/gralloc.mt8173.so
 vendor/lib/hw/vendor.mediatek.hardware.power@1.1-impl.so
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
 vendor/lib/hw/sensors.mt8173.so
 vendor/lib/hw/power.mt8173.so
 vendor/lib/hw/memtrack.mt8173.so
@@ -242,7 +248,6 @@ vendor/lib/libdpframework.so
 vendor/lib/libaudiocustparam_vendor.so
 vendor/lib/libcam.utils.sensorlistener.so
 vendor/lib/libimageio_plat_drv.so
-vendor/lib64/libteec.so
 vendor/lib64/libcam.utils.so
 vendor/lib64/libPQjni.so
 vendor/lib64/libspeech_enh_lib.so
@@ -301,7 +306,6 @@ vendor/lib64/libforkexecwrap.so
 vendor/lib64/libcam.camshot.so
 vendor/lib64/libaudioprimarydevicehalifclient.so
 vendor/lib64/libmtkshifter_vendor.so
-vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 vendor/lib64/libSwJpgCodec.so
 vendor/lib64/libaudiocomponentengine_vendor.so
 vendor/lib64/libion_ulit.so
@@ -329,11 +333,13 @@ vendor/lib64/libcam.exif.v3.so
 vendor/lib64/libMtkOmxCore.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.0_vendor.so
 vendor/lib64/hw/hwcomposer.mt8173.so
+vendor/lib64/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
 vendor/lib64/hw/vulkan.mt8173.so
 vendor/lib64/hw/android.hardware.audio@2.0-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.0-impl.so
 vendor/lib64/hw/gralloc.mt8173.so
 vendor/lib64/hw/vendor.mediatek.hardware.power@1.1-impl.so
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
 vendor/lib64/hw/sensors.mt8173.so
 vendor/lib64/hw/power.mt8173.so
 vendor/lib64/hw/memtrack.mt8173.so
@@ -413,5 +419,6 @@ vendor/lib64/libifcutils_mtk.so
 vendor/lib64/libdpframework.so
 vendor/lib64/libaudiocustparam_vendor.so
 vendor/lib64/libcam.utils.sensorlistener.so
-vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 vendor/lib64/libimageio_plat_drv.so
+vendor/usr/keylayout/ft5x46.kl
+vendor/usr/keylayout/mt-snd-card_Headset.kl

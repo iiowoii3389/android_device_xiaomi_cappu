@@ -3,8 +3,8 @@
 
 set -e
 
-DEVICE=u1005
-VENDOR=cube
+DEVICE=cappu
+VENDOR=xiaomi
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
