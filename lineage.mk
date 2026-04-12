@@ -1,5 +1,8 @@
 # Copyright (C) 2018 The LineageOS Project
 
+TARGET_SCREEN_WIDTH := 1536
+TARGET_SCREEN_HEIGHT := 2048
+
 $(call inherit-product, device/xiaomi/cappu/device.mk)
 
 # Inherit some common Lineage stuff.

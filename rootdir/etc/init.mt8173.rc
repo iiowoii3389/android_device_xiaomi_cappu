@@ -77,11 +77,7 @@ on fs
     symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/dkb /dev/dkb
     write /proc/bootprof "INIT:Mount_END"
     write /proc/sys/vm/page-cluster 0
-    swapon_all /fstab.enableswap
-
-on fs
-
-   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
+    swapon_all /vendor/etc/fstab.enableswap
 
 on post-fs
     # Support legacy paths
@@ -704,4 +700,11 @@ service pvrsrvctl /vendor/bin/pvrsrvctl --no-module  --start
 	group root
 	oneshot
 
-
+# WiFi && BT(UART1) permission
+on boot
+    chmod 666 /sys/module/bcmdhd/parameters/firmware_path
+    chmod 666 /sys/module/bcmdhd/parameters/nvram_path
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /dev/ttyMT1
+    chmod 0660 /dev/ttyMT1

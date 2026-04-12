@@ -1,10 +1,10 @@
+vendor/etc/bluetooth/bt_vendor.conf
 vendor/etc/cdma_ecc_list.xml
 vendor/etc/special_pws_channel.xml
 vendor/etc/ecc_list.xml
 vendor/etc/spn-conf-op09.xml
 vendor/etc/cdma_ecc_list_OP09.xml
 vendor/etc/init/init.thermal.rc
-vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
 vendor/etc/init/muxreport.rc
 vendor/etc/init/vendor.mediatek.hardware.power@1.1-service.rc
@@ -39,7 +39,17 @@ vendor/etc/.tp/.ht120.mtc
 vendor/etc/.tp/thermal.off.conf
 vendor/etc/ecc_list_OP12.xml
 vendor/etc/virtual-spn-conf-by-efpnn.xml
+vendor/usr/keylayout/mt-snd-card_Headset.kl
+vendor/usr/keylayout/ft5x46.kl
+vendor/firmware/fw_bcmdhd.bin
+vendor/firmware/tfa98xx.cnt
+vendor/firmware/bcm94356wlsagbl_gpio_hwoob.txt
+vendor/firmware/fw_bcmdhd_mfg.bin
+vendor/firmware/bt/BCM4354A2_001.003.015.0084.0268_ORC.hcd
+vendor/firmware/md32_d.bin
+vendor/firmware/md32_p.bin
 vendor/firmware/rgx.fw.signed
+vendor/firmware/fw_bcmdhd_apsta.bin
 vendor/bin/thermal_manager
 vendor/bin/gsm0710muxd
 vendor/bin/nvram_daemon
@@ -54,7 +64,6 @@ vendor/bin/hw/vendor.mediatek.hardware.pq@2.0-service
 vendor/bin/hw/vendor.mediatek.hardware.power@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-service
 vendor/bin/hw/android.hardware.audio@2.0-service-mediatek
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-mediatek
 vendor/bin/kph
 vendor/bin/spir2cl
 vendor/bin/thermal
@@ -69,12 +78,11 @@ vendor/lib/libcam.utils.so
 vendor/lib/libPQjni.so
 vendor/lib/libspeech_enh_lib.so
 vendor/lib/libhwm.so
-vendor/lib/libbluetoothem_mtk.so
 vendor/lib/librilproxy.so
 vendor/lib/libblisrc32_vendor.so
+vendor/lib/libbt-vendor.so
 vendor/lib/libmtkcam_fwkutils.so
 vendor/lib/libmtklimiter_vendor.so
-vendor/lib/libbluetooth_mtk_pure.so
 vendor/lib/libmtkcam_metadata.so
 vendor/lib/libdirect-coredump.so
 vendor/lib/vendor.mediatek.hardware.mtkcodecservice@1.1_vendor.so
@@ -102,7 +110,6 @@ vendor/lib/libccci_util.so
 vendor/lib/vendor.mediatek.hardware.radio.deprecated@1.1_vendor.so
 vendor/lib/libmemtrack_GL.so
 vendor/lib/libnativecheck-jni.so
-vendor/lib/libbluetooth_relayer.so
 vendor/lib/libIMGegl.so
 vendor/lib/libperfservice.so
 vendor/lib/libcam.iopipe.so
@@ -161,8 +168,8 @@ vendor/lib/hw/android.hardware.audio@2.0-impl-mediatek.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.0-impl.so
 vendor/lib/hw/gralloc.mt8173.so
 vendor/lib/hw/vendor.mediatek.hardware.power@1.1-impl.so
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
 vendor/lib/hw/sensors.mt8173.so
+vendor/lib/hw/audio.primary.mt8173.so
 vendor/lib/hw/power.mt8173.so
 vendor/lib/hw/memtrack.mt8173.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.0-impl.so
@@ -202,10 +209,8 @@ vendor/lib/libmtkcam_device1.so
 vendor/lib/libui_ext.so
 vendor/lib/libfpspolicy.so
 vendor/lib/libstagefrighthw.so
-vendor/lib/libbluetooth_mtk.so
 vendor/lib/vendor.mediatek.hardware.nvram@1.0_vendor.so
 vendor/lib/libkphhelper.so
-vendor/lib/libbluetooth_hw_test.so
 vendor/lib/libpl.so
 vendor/lib/libJpgEncPipe.so
 vendor/lib/libgralloc_extra.so
@@ -220,7 +225,6 @@ vendor/lib/libacdk.so
 vendor/lib/libcam.client.so
 vendor/lib/libcustom_nvram.so
 vendor/lib/libvcodec_utility.so
-vendor/lib/libbt-vendor.so
 vendor/lib/libgpu_aux.so
 vendor/lib/libdngop.so
 vendor/lib/libaudiosetting.so
@@ -252,13 +256,12 @@ vendor/lib64/libcam.utils.so
 vendor/lib64/libPQjni.so
 vendor/lib64/libspeech_enh_lib.so
 vendor/lib64/libhwm.so
-vendor/lib64/libbluetoothem_mtk.so
 vendor/lib64/librilproxy.so
 vendor/lib64/libblisrc32_vendor.so
+vendor/lib64/libbt-vendor.so
 vendor/lib64/libmtkcam_fwkutils.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libmtklimiter_vendor.so
-vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libmtkcam_metadata.so
 vendor/lib64/libdirect-coredump.so
 vendor/lib64/vendor.mediatek.hardware.mtkcodecservice@1.1_vendor.so
@@ -283,7 +286,6 @@ vendor/lib64/libccci_util.so
 vendor/lib64/vendor.mediatek.hardware.radio.deprecated@1.1_vendor.so
 vendor/lib64/libmemtrack_GL.so
 vendor/lib64/libnativecheck-jni.so
-vendor/lib64/libbluetooth_relayer.so
 vendor/lib64/libIMGegl.so
 vendor/lib64/libperfservice.so
 vendor/lib64/libcam.iopipe.so
@@ -339,8 +341,8 @@ vendor/lib64/hw/android.hardware.audio@2.0-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.0-impl.so
 vendor/lib64/hw/gralloc.mt8173.so
 vendor/lib64/hw/vendor.mediatek.hardware.power@1.1-impl.so
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
 vendor/lib64/hw/sensors.mt8173.so
+vendor/lib64/hw/audio.primary.mt8173.so
 vendor/lib64/hw/power.mt8173.so
 vendor/lib64/hw/memtrack.mt8173.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.0-impl.so
@@ -374,11 +376,9 @@ vendor/lib64/libmtkcam_device1.so
 vendor/lib64/libui_ext.so
 vendor/lib64/libfpspolicy.so
 vendor/lib64/libstagefrighthw.so
-vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0_vendor.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.0_vendor.so
 vendor/lib64/libkphhelper.so
-vendor/lib64/libbluetooth_hw_test.so
 vendor/lib64/libpl.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libgralloc_extra.so
@@ -392,7 +392,6 @@ vendor/lib64/libacdk.so
 vendor/lib64/libcam.client.so
 vendor/lib64/libcustom_nvram.so
 vendor/lib64/libvcodec_utility.so
-vendor/lib64/libbt-vendor.so
 vendor/lib64/libgpu_aux.so
 vendor/lib64/libgoodixfingerprintd_binder.so
 vendor/lib64/libdngop.so
@@ -420,5 +419,3 @@ vendor/lib64/libdpframework.so
 vendor/lib64/libaudiocustparam_vendor.so
 vendor/lib64/libcam.utils.sensorlistener.so
 vendor/lib64/libimageio_plat_drv.so
-vendor/usr/keylayout/ft5x46.kl
-vendor/usr/keylayout/mt-snd-card_Headset.kl
