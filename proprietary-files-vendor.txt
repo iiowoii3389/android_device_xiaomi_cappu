@@ -80,7 +80,6 @@ vendor/lib/libspeech_enh_lib.so
 vendor/lib/libhwm.so
 vendor/lib/librilproxy.so
 vendor/lib/libblisrc32_vendor.so
-vendor/lib/libbt-vendor.so
 vendor/lib/libmtkcam_fwkutils.so
 vendor/lib/libmtklimiter_vendor.so
 vendor/lib/libmtkcam_metadata.so
@@ -258,7 +257,6 @@ vendor/lib64/libspeech_enh_lib.so
 vendor/lib64/libhwm.so
 vendor/lib64/librilproxy.so
 vendor/lib64/libblisrc32_vendor.so
-vendor/lib64/libbt-vendor.so
 vendor/lib64/libmtkcam_fwkutils.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libmtklimiter_vendor.so
