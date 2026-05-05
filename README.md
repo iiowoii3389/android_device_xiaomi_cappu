@@ -4,10 +4,7 @@ System bootable...
 
 
 Not Working
+camera
 all sensor (HAL)
-audio HAL
-power HAL?
-wifi
 bluetooth
-media encoder
 
