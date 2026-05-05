@@ -9,13 +9,21 @@ on post-fs-data
     chmod 0660 /dev/als_ps
     chmod 0660 /dev/gyroscope
     chmod 0660 /dev/aal_als
-
-    chmod 0660 /sys/devices/platform/msensor/driver/cpsopmode
-    chmod 0660 /sys/devices/platform/msensor/driver/cpsreptxy
-    chmod 0660 /sys/devices/platform/msensor/driver/cpsreptz
-    chmod 0660 /sys/devices/platform/gsensor/driver/cpsopmode
-    chmod 0660 /sys/devices/platform/gsensor/driver/cpsrange
-    chmod 0660 /sys/devices/platform/gsensor/driver/cpsbandwidth
+    chmod 0660 /dev/humidity
+    chmod 0660 /dev/barometer
+    chmod 0660 /dev/m_als_misc
+    chmod 0660 /dev/m_baro_misc
+    chmod 0660 /dev/m_hmdy_misc
+    chmod 0660 /dev/m_ps_misc
+    chmod 0660 /dev/m_acc_misc
+    chmod 0660 /dev/m_mag_misc
+    chmod 0660 /dev/m_gyro_misc
+    chmod 0660 /dev/m_act_misc
+    chmod 0660 /dev/m_pedo_misc
+    chmod 0660 /dev/m_situ_misc
+    chmod 0660 /dev/m_step_c_misc
+    chmod 0660 /dev/m_fusion_misc
+    chmod 0660 /dev/m_bio_misc
 
     chown system system /dev/hwmsensor
     chown system system /dev/msensor
@@ -23,292 +31,151 @@ on post-fs-data
     chown radio system /dev/als_ps
     chown system system /dev/gyroscope
     chown system system /dev/aal_als
+    chown system system /dev/humidity
+    chown system system /dev/barometer
+    chown system system /dev/m_als_misc
+    chown system system /dev/m_baro_misc
+    chown system system /dev/m_hmdy_misc
+    chown system system /dev/m_ps_misc
+    chown system system /dev/m_acc_misc
+    chown system system /dev/m_mag_misc
+    chown system system /dev/m_gyro_misc
+    chown system system /dev/m_act_misc
+    chown system system /dev/m_pedo_misc
+    chown system system /dev/m_situ_misc
+    chown system system /dev/m_step_c_misc
+    chown system system /dev/m_fusion_misc
+    chown system system /dev/m_bio_misc
 
-    chmod 0660 /sys/class/misc/m_acc_misc/accenablenodata
-    chmod 0660 /sys/class/misc/m_acc_misc/accactive
-    chmod 0660 /sys/class/misc/m_acc_misc/accdelay
-    chmod 0660 /sys/class/misc/m_acc_misc/accbatch
-    chmod 0660 /sys/class/misc/m_acc_misc/accflush
-    chown system system /sys/class/misc/m_acc_misc/accenablenodata
-    chown system system /sys/class/misc/m_acc_misc/accactive
-    chown system system /sys/class/misc/m_acc_misc/accdelay
-    chown system system /sys/class/misc/m_acc_misc/accbatch
-    chown system system /sys/class/misc/m_acc_misc/accflush
+    chmod 0660 /sys/class/sensor/m_acc_misc/accenablenodata
+    chmod 0660 /sys/class/sensor/m_acc_misc/accactive
+    chmod 0660 /sys/class/sensor/m_acc_misc/accdelay
+    chmod 0660 /sys/class/sensor/m_acc_misc/accbatch
+    chmod 0660 /sys/class/sensor/m_acc_misc/accflush
+    chmod 0660 /sys/class/sensor/m_acc_misc/acccali
+    chown system system /sys/class/sensor/m_acc_misc/accenablenodata
+    chown system system /sys/class/sensor/m_acc_misc/accactive
+    chown system system /sys/class/sensor/m_acc_misc/accdelay
+    chown system system /sys/class/sensor/m_acc_misc/accbatch
+    chown system system /sys/class/sensor/m_acc_misc/accflush
+    chown system system /sys/class/sensor/m_acc_misc/acccali
 
-    chmod 0660 /sys/class/misc/m_mag_misc/magactive
-    chmod 0660 /sys/class/misc/m_mag_misc/magdelay
-    chmod 0660 /sys/class/misc/m_mag_misc/magbatch
-    chmod 0660 /sys/class/misc/m_mag_misc/magflush
-    chmod 0660 /sys/class/misc/m_mag_misc/magoactive
-    chmod 0660 /sys/class/misc/m_mag_misc/magodelay
-    chmod 0660 /sys/class/misc/m_mag_misc/magobatch
-    chmod 0660 /sys/class/misc/m_mag_misc/magoflush
-    chown system system /sys/class/misc/m_mag_misc/magactive
-    chown system system /sys/class/misc/m_mag_misc/magdelay
-    chown system system /sys/class/misc/m_mag_misc/magbatch
-    chown system system /sys/class/misc/m_mag_misc/magflush
-    chown system system /sys/class/misc/m_mag_misc/magoactive
-    chown system system /sys/class/misc/m_mag_misc/magodelay
-    chown system system /sys/class/misc/m_mag_misc/magobatch
-    chown system system /sys/class/misc/m_mag_misc/magoflush
-    chmod 0660 /sys/class/misc/m_batch_misc/batchactive
-    chmod 0660 /sys/class/misc/m_batch_misc/batchdelay
-    chmod 0660 /sys/class/misc/m_batch_misc/batchbatch
-    chmod 0660 /sys/class/misc/m_batch_misc/batchflush
-    chown system system /sys/class/misc/m_batch_misc/batchactive
-    chown system system /sys/class/misc/m_batch_misc/batchdelay
-    chown system system /sys/class/misc/m_batch_misc/batchbatch
-    chown system system /sys/class/misc/m_batch_misc/batchflush
+    chmod 0660 /sys/class/sensor/m_mag_misc/magactive
+    chmod 0660 /sys/class/sensor/m_mag_misc/magdelay
+    chmod 0660 /sys/class/sensor/m_mag_misc/magbatch
+    chmod 0660 /sys/class/sensor/m_mag_misc/magflush
+    chmod 0660 /sys/class/sensor/m_mag_misc/magcali
+    chmod 0660 /sys/class/sensor/m_mag_misc/maglibinfo
+    chown system system /sys/class/sensor/m_mag_misc/magactive
+    chown system system /sys/class/sensor/m_mag_misc/magdelay
+    chown system system /sys/class/sensor/m_mag_misc/magbatch
+    chown system system /sys/class/sensor/m_mag_misc/magflush
+    chown system system /sys/class/sensor/m_mag_misc/magcali
+    chown system system /sys/class/sensor/m_mag_misc/maglibinfo
 
-	chmod 0660 /sys/class/misc/m_gyro_misc/gyroenablenodata
-    chmod 0660 /sys/class/misc/m_gyro_misc/gyroactive
-    chmod 0660 /sys/class/misc/m_gyro_misc/gyrodelay
-    chmod 0660 /sys/class/misc/m_gyro_misc/gyrobatch
-    chmod 0660 /sys/class/misc/m_gyro_misc/gyroflush
-    chown system system /sys/class/misc/m_gyro_misc/gyroenablenodata
-    chown system system /sys/class/misc/m_gyro_misc/gyroactive
-    chown system system /sys/class/misc/m_gyro_misc/gyrodelay
-    chown system system /sys/class/misc/m_gyro_misc/gyrobatch
-    chown system system /sys/class/misc/m_gyro_misc/gyroflush
+    chmod 0660 /sys/class/sensor/m_gyro_misc/gyroenablenodata
+    chmod 0660 /sys/class/sensor/m_gyro_misc/gyroactive
+    chmod 0660 /sys/class/sensor/m_gyro_misc/gyrodelay
+    chmod 0660 /sys/class/sensor/m_gyro_misc/gyrobatch
+    chmod 0660 /sys/class/sensor/m_gyro_misc/gyroflush
+    chmod 0660 /sys/class/sensor/m_gyro_misc/gyrocali
+    chown system system /sys/class/sensor/m_gyro_misc/gyroenablenodata
+    chown system system /sys/class/sensor/m_gyro_misc/gyroactive
+    chown system system /sys/class/sensor/m_gyro_misc/gyrodelay
+    chown system system /sys/class/sensor/m_gyro_misc/gyrobatch
+    chown system system /sys/class/sensor/m_gyro_misc/gyroflush
+    chown system system /sys/class/sensor/m_gyro_misc/gyrocali
 
-    chmod 0660 /sys/class/misc/m_alsps_misc/alsactive
-    chmod 0660 /sys/class/misc/m_alsps_misc/alsdelay
-    chmod 0660 /sys/class/misc/m_alsps_misc/alsbatch
-    chmod 0660 /sys/class/misc/m_alsps_misc/alsflush
-    chmod 0660 /sys/class/misc/m_alsps_misc/psactive
-    chmod 0660 /sys/class/misc/m_alsps_misc/psdelay
-    chmod 0660 /sys/class/misc/m_alsps_misc/psbatch
-    chmod 0660 /sys/class/misc/m_alsps_misc/psflush
-    chown system system /sys/class/misc/m_alsps_misc/alsactive
-    chown system system /sys/class/misc/m_alsps_misc/alsdelay
-    chown system system /sys/class/misc/m_alsps_misc/alsbatch
-    chown system system /sys/class/misc/m_alsps_misc/alsflush
-    chown system system /sys/class/misc/m_alsps_misc/psactive
-    chown system system /sys/class/misc/m_alsps_misc/psdelay
-    chown system system /sys/class/misc/m_alsps_misc/psbatch
-    chown system system /sys/class/misc/m_alsps_misc/psflush
+    chmod 0660 /sys/class/sensor/m_als_misc/alsactive
+    chmod 0660 /sys/class/sensor/m_als_misc/alsdelay
+    chmod 0660 /sys/class/sensor/m_als_misc/alsbatch
+    chmod 0660 /sys/class/sensor/m_als_misc/alsflush
+    chmod 0660 /sys/class/sensor/m_ps_misc/psactive
+    chmod 0660 /sys/class/sensor/m_ps_misc/psdelay
+    chmod 0660 /sys/class/sensor/m_ps_misc/psbatch
+    chmod 0660 /sys/class/sensor/m_ps_misc/psflush
+    chown system system /sys/class/sensor/m_als_misc/alsactive
+    chown system system /sys/class/sensor/m_als_misc/alsdelay
+    chown system system /sys/class/sensor/m_als_misc/alsbatch
+    chown system system /sys/class/sensor/m_als_misc/alsflush
+    chown system system /sys/class/sensor/m_ps_misc/psactive
+    chown system system /sys/class/sensor/m_ps_misc/psdelay
+    chown system system /sys/class/sensor/m_ps_misc/psbatch
+    chown system system /sys/class/sensor/m_ps_misc/psflush
 
-    chmod 0660 /sys/class/misc/m_baro_misc/baroenablenodata
-    chmod 0660 /sys/class/misc/m_baro_misc/baroactive
-    chmod 0660 /sys/class/misc/m_baro_misc/barodelay
-    chmod 0660 /sys/class/misc/m_baro_misc/barobatch
-    chmod 0660 /sys/class/misc/m_baro_misc/baroflush
-    chown system system /sys/class/misc/m_baro_misc/baroenablenodata
-    chown system system /sys/class/misc/m_baro_misc/baroactive
-    chown system system /sys/class/misc/m_baro_misc/barodelay
-    chown system system /sys/class/misc/m_baro_misc/barobatch
-    chown system system /sys/class/misc/m_baro_misc/baroflush
+    chmod 0660 /sys/class/sensor/m_baro_misc/baroenablenodata
+    chmod 0660 /sys/class/sensor/m_baro_misc/baroactive
+    chmod 0660 /sys/class/sensor/m_baro_misc/barodelay
+    chmod 0660 /sys/class/sensor/m_baro_misc/barobatch
+    chmod 0660 /sys/class/sensor/m_baro_misc/baroflush
+    chown system system /sys/class/sensor/m_baro_misc/baroenablenodata
+    chown system system /sys/class/sensor/m_baro_misc/baroactive
+    chown system system /sys/class/sensor/m_baro_misc/barodelay
+    chown system system /sys/class/sensor/m_baro_misc/barobatch
+    chown system system /sys/class/sensor/m_baro_misc/baroflush
 
-    #bosch add gsensor
-    chmod 0660 /sys/bus/platform/drivers/gsensor/acc_odr
-    chmod 0660 /sys/bus/platform/drivers/gsensor/acc_op_mode
-    chmod 0660 /sys/bus/platform/drivers/gsensor/acc_range
-    chmod 0660 /sys/bus/platform/drivers/gsensor/bmi_value
-    chmod 0660 /sys/bus/platform/drivers/gsensor/chipinfo
-    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsdata
-    chmod 0660 /sys/bus/platform/drivers/gsensor/delay
-    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_bytecount
-    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_data_frame
-    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_data_sel
-    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_header_en
-    chown system system /sys/bus/platform/drivers/gsensor/acc_odr
-    chown system system /sys/bus/platform/drivers/gsensor/acc_op_mode
-    chown system system /sys/bus/platform/drivers/gsensor/acc_range
-    chown system system /sys/bus/platform/drivers/gsensor/bmi_value
-    chown system system /sys/bus/platform/drivers/gsensor/chipinfo
-    chown system system /sys/bus/platform/drivers/gsensor/cpsdata
-    chown system system /sys/bus/platform/drivers/gsensor/delay
-    chown system system /sys/bus/platform/drivers/gsensor/fifo_bytecount
-    chown system system /sys/bus/platform/drivers/gsensor/fifo_data_frame
-    chown system system /sys/bus/platform/drivers/gsensor/fifo_data_sel
-    chown system system /sys/bus/platform/drivers/gsensor/fifo_header_en
+    chmod 0660 /sys/class/sensor/m_hmdy_misc/hmdyenablenodata
+    chmod 0660 /sys/class/sensor/m_hmdy_misc/hmdyactive
+    chmod 0660 /sys/class/sensor/m_hmdy_misc/hmdydelay
+    chmod 0660 /sys/class/sensor/m_hmdy_misc/hmdybatch
+    chmod 0660 /sys/class/sensor/m_hmdy_misc/hmdyflush
 
-    #bosch add gyro
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/rawdata
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/gyro_op_mode
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/gyro_range
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/gyro_odr
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_enable
-    chown system system /sys/bus/platform/drivers/gyroscope/rawdata
-    chown system system /sys/bus/platform/drivers/gyroscope/gyro_op_mode
-    chown system system /sys/bus/platform/drivers/gyroscope/gyro_range
-    chown system system /sys/bus/platform/drivers/gyroscope/gyro_odr
-    chown system system /sys/bus/platform/drivers/gyroscope/fifo_enable
+    chown system system /sys/class/sensor/m_hmdy_misc/hmdyenablenodata
+    chown system system /sys/class/sensor/m_hmdy_misc/hmdyactive
+    chown system system /sys/class/sensor/m_hmdy_misc/hmdydelay
+    chown system system /sys/class/sensor/m_hmdy_misc/hmdybatch
+    chown system system /sys/class/sensor/m_hmdy_misc/hmdyflush
 
-    #bosch add mag
-    chmod 0660 /sys/bus/platform/drivers/msensor/cpsdata
-    chmod 0660 /sys/bus/platform/drivers/msensor/cpsopmode
-    chmod 0660 /sys/bus/platform/drivers/msensor/cpsreptxy
-    chmod 0660 /sys/bus/platform/drivers/msensor/cpsreptz
-    chmod 0660 /sys/bus/platform/drivers/msensor/sensordata
-    chmod 0660 /sys/bus/platform/drivers/msensor/rawdata
-    chmod 0660 /sys/bus/platform/drivers/msensor/op_mode
-    chown system system /sys/bus/platform/drivers/msensor/rawdata
-    chown system system /sys/bus/platform/drivers/msensor/op_mode
-    chown system system /sys/bus/platform/drivers/msensor/cpsdata
-    chown system system /sys/bus/platform/drivers/msensor/cpsopmode
-    chown system system /sys/bus/platform/drivers/msensor/cpsreptxy
-    chown system system /sys/bus/platform/drivers/msensor/cpsreptz
-    chown system system /sys/bus/platform/drivers/msensor/sensordata
+    chmod 0660 /sys/class/sensor/m_pedo_misc/pedoactive
+    chmod 0660 /sys/class/sensor/m_pedo_misc/pedodelay
+    chmod 0660 /sys/class/sensor/m_pedo_misc/pedobatch
+    chmod 0660 /sys/class/sensor/m_pedo_misc/pedoflush
+    chown system system /sys/class/sensor/m_pedo_misc/pedoactive
+    chown system system /sys/class/sensor/m_pedo_misc/pedodelay
+    chown system system /sys/class/sensor/m_pedo_misc/pedobatch
+    chown system system /sys/class/sensor/m_pedo_misc/pedoflush
 
-    #bosch add bma160
-    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsdata
-    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsopmode
-    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsrange
-    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsbandwidth
-    chmod 0660 /sys/bus/platform/drivers/gsensor/sensordata
-    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_mode
-    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_framecount
-    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_data_frame
-    chown system system /sys/bus/platform/drivers/gsensor/cpsdata
-    chown system system /sys/bus/platform/drivers/gsensor/cpsopmode
-    chown system system /sys/bus/platform/drivers/gsensor/cpsrange
-    chown system system /sys/bus/platform/drivers/gsensor/cpsbandwidth
-    chown system system /sys/bus/platform/drivers/gsensor/sensordata
-    chown system system /sys/bus/platform/drivers/gsensor/fifo_mode
-    chown system system /sys/bus/platform/drivers/gsensor/fifo_framecount
-    chown system system /sys/bus/platform/drivers/gsensor/fifo_data_frame
+    chmod 0660 /sys/class/sensor/m_situ_misc/situactive
+    chmod 0660 /sys/class/sensor/m_situ_misc/situdelay
+    chmod 0660 /sys/class/sensor/m_situ_misc/situbatch
+    chmod 0660 /sys/class/sensor/m_situ_misc/situflush
+    chown system system /sys/class/sensor/m_situ_misc/situactive
+    chown system system /sys/class/sensor/m_situ_misc/situdelay
+    chown system system /sys/class/sensor/m_situ_misc/situbatch
+    chown system system /sys/class/sensor/m_situ_misc/situflush
 
-    #bosch add bmg160
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/cpsopmode
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/cpsrange
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/cpsbandwidth
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/sensordata
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_mode
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_framecount
-    chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_data_frame
-    chown system system /sys/bus/platform/drivers/gyroscope/cpsopmode
-    chown system system /sys/bus/platform/drivers/gyroscope/cpsrange
-    chown system system /sys/bus/platform/drivers/gyroscope/cpsbandwidth
-    chown system system /sys/bus/platform/drivers/gyroscope/sensordata
-    chown system system /sys/bus/platform/drivers/gyroscope/fifo_mode
-    chown system system /sys/bus/platform/drivers/gyroscope/fifo_framecount
-    chown system system /sys/bus/platform/drivers/gyroscope/fifo_data_frame
+    chmod 0660 /sys/class/sensor/m_act_misc/actactive
+    chmod 0660 /sys/class/sensor/m_act_misc/actdelay
+    chmod 0660 /sys/class/sensor/m_act_misc/actbatch
+    chmod 0660 /sys/class/sensor/m_act_misc/actflush
+    chown system system /sys/class/sensor/m_act_misc/actactive
+    chown system system /sys/class/sensor/m_act_misc/actdelay
+    chown system system /sys/class/sensor/m_act_misc/actbatch
+    chown system system /sys/class/sensor/m_act_misc/actflush
 
-    #bosch add step counter/detector/sig motion if the features need
-    chmod 0660 /sys/class/misc/m_step_c_misc/step_cenablenodata
-    chmod 0660 /sys/class/misc/m_step_c_misc/step_cactive
-    chmod 0660 /sys/class/misc/m_step_c_misc/step_cbatch
-    chmod 0660 /sys/class/misc/m_step_c_misc/step_cflush
-    chmod 0660 /sys/class/misc/m_step_c_misc/step_cdevnum
-    chown system system /sys/class/misc/m_step_c_misc/step_cenablenodata
-    chown system system /sys/class/misc/m_step_c_misc/step_cactive
-    chown system system /sys/class/misc/m_step_c_misc/step_cbatch
-    chown system system /sys/class/misc/m_step_c_misc/step_cflush
-    chown system system /sys/class/misc/m_step_c_misc/step_cdevnum
+    chmod 0660 /sys/class/sensor/m_step_c_misc/step_cactive
+    chmod 0660 /sys/class/sensor/m_step_c_misc/step_cdelay
+    chmod 0660 /sys/class/sensor/m_step_c_misc/step_cbatch
+    chmod 0660 /sys/class/sensor/m_step_c_misc/step_cflush
+    chown system system /sys/class/sensor/m_step_c_misc/step_cactive
+    chown system system /sys/class/sensor/m_step_c_misc/step_cdelay
+    chown system system /sys/class/sensor/m_step_c_misc/step_cbatch
+    chown system system /sys/class/sensor/m_step_c_misc/step_cflush
 
-    #PMIC
-    chmod 0660 /data/misc/acdapi/sensors.dat
-    chown system /sys/devices/platform/msensor/driver/cpsopmode
-    chown system /sys/devices/platform/msensor/driver/cpsreptxy
-    chown system /sys/devices/platform/msensor/driver/cpsreptz
-    chown system /sys/devices/platform/gsensor/driver/cpsopmode
-    chown system /sys/devices/platform/gsensor/driver/cpsrange
+    chmod 0660 /sys/class/sensor/m_fusion_misc/fusionactive
+    chmod 0660 /sys/class/sensor/m_fusion_misc/fusiondelay
+    chmod 0660 /sys/class/sensor/m_fusion_misc/fusionbatch
+    chmod 0660 /sys/class/sensor/m_fusion_misc/fusionflush
+    chown system system /sys/class/sensor/m_fusion_misc/fusionactive
+    chown system system /sys/class/sensor/m_fusion_misc/fusiondelay
+    chown system system /sys/class/sensor/m_fusion_misc/fusionbatch
+    chown system system /sys/class/sensor/m_fusion_misc/fusionflush
 
-#
-#sensor service (begin)
-#
-
-service msensord /vendor/bin/msensord
-    class main
-    oneshot
-
-service s62xd /vendor/bin/s62xd
-    disabled
-    user compass
-    group system
-    class main
-service ami304d /vendor/bin/ami304d
-    user system
-    group system
-    disabled
-    class main
-
-service memsicd /vendor/bin/memsicd
-    disabled
-    user system
-    group system
-    class main
-
-service memsicd3416x /vendor/bin/memsicd3416x
-    disabled
-    user system
-    group system
-    class main
-service akmd8975 /vendor/bin/akmd8975
-    disabled
-    user system
-    group system
-    class main
-
-service akmd8963 /vendor/bin/akmd8963
-    disabled
-    user system
-    group system
-    class main
-
-service akmd09911 /vendor/bin/akmd09911
-    disabled
-    user system
-    group system
-    class main
-service bmm050d /vendor/bin/bmm050d
-    disabled
-    user system
-    group system
-    class main
-
-service bmm056d /vendor/bin/bmm056d
-    disabled
-    user system
-    group system
-    class main
-service mc6420d /vendor/bin/mc6420d
-    disabled
-    user system
-    group system
-    class main
-service qmc5983d /vendor/bin/qmc5983d
-     disabled
-	 user system
-    group system
-    class main
-
-service orientationd /vendor/bin/orientationd
-    disabled
-    user system
-    group system input
-    class main
-service AcdApiDaemon /vendor/bin/AcdApiDaemon
-    disabled
-    user system
-    group system
-    class main
-
-service geomagneticd /vendor/bin/geomagneticd
-    disabled
-    user system
-    group system input
-    class main
-
-service mpud6050 /vendor/bin/mpud6050
-    oneshot
-    user system
-    group system
-
-service mc64xxd /vendor/bin/mc64xxd
-    disabled
-    user system
-    group system
-    class main
-
-service panel-info-sh /system/bin/sh /system/etc/init.panel_info.sh
-    class core
-    user root
-    group root
-    oneshot
-    seclabel u:r:panel-info-sh:s0
-
-#
-#sensor service (end)
-#
+    chmod 0660 /sys/class/sensor/m_bio_misc/bioactive
+    chmod 0660 /sys/class/sensor/m_bio_misc/biodelay
+    chmod 0660 /sys/class/sensor/m_bio_misc/biobatch
+    chmod 0660 /sys/class/sensor/m_bio_misc/bioflush
+    chown system system /sys/class/sensor/m_bio_misc/bioactive
+    chown system system /sys/class/sensor/m_bio_misc/biodelay
+    chown system system /sys/class/sensor/m_bio_misc/biobatch
+    chown system system /sys/class/sensor/m_bio_misc/bioflush

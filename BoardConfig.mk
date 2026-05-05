@@ -141,3 +141,6 @@ WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/fw_bcmdhd.bin"
 
 BOARD_USE_SOFT_GATEKEEPER := true
+
+#Disable block system OTA package
+BLOCK_BASED_OTA := false

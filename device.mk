@@ -200,12 +200,6 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
-# Sensor
-PRODUCT_PACKAGES += \
-    libsensorndkbridge \
-    android.hardware.sensors@1.0-impl-mediatek \
-    android.hardware.sensors@1.0-service-mediatek
-
 # Gatekeeper
 PRODUCT_PACKAGES += \
     gatekeeper.default \
