@@ -61,12 +61,8 @@ PRODUCT_PACKAGES += \
     fstab.enableswap \
     fstab.mt8173 \
     init.connectivity.rc \
-    init.modem.rc \
     init.mt8173.rc \
     init.mt8173.usb.rc \
-    init.odm.rc \
-    init.project.rc \
-    init.protect.rc \
     init.recovery.mt8173.rc \
     init.sensor_1_0.rc \
     ueventd.mt8173.rc
@@ -118,7 +114,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-impl \
-    libbt-vendor \
     audio.a2dp.default
 
 # Media
@@ -205,9 +200,5 @@ PRODUCT_PACKAGES += \
     gatekeeper.default \
     android.hardware.gatekeeper@1.0-service \
     android.hardware.gatekeeper@1.0-impl
-
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
 
 $(call inherit-product-if-exists, vendor/xiaomi/cappu/cappu-vendor.mk)
