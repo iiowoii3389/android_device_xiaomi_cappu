@@ -126,7 +126,7 @@ int AmbiLightSensor::enable(int32_t handle, int en)
           return -1;
     }
 
-    sprintf(buf, "%d,%d", handle, en);
+    sprintf(buf, "%d", en ? 1 : 0);
     TEMP_FAILURE_RETRY(write(fd, buf, sizeof(buf)));
     close(fd);
     return 0;

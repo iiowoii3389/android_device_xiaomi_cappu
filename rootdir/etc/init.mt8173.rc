@@ -703,10 +703,12 @@ service pvrsrvctl /vendor/bin/pvrsrvctl --no-module  --start
 	oneshot
 
 # WiFi && BT(UART1) permission
+on post-fs-data
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+
 on boot
     chmod 666 /sys/module/bcmdhd/parameters/firmware_path
     chmod 666 /sys/module/bcmdhd/parameters/nvram_path
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-    chmod 0660 /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /dev/ttyMT1
-    chmod 0660 /dev/ttyMT1
+

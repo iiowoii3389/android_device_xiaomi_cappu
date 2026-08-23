@@ -16,3 +16,11 @@ PRODUCT_NAME := lineage_cappu
 PRODUCT_RELEASE_NAME := cappu
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+BUILD_FINGERPRINT := Xiaomi/cappu/cappu:7.0/NRD90M/V10.2.1.0.NCICNXM:user/release-keys
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="cappu-user 7.0 NRD90M V10.2.1.0.NCICNXM release-keys" \
+    PRODUCT_NAME="cappu" \
+    TARGET_DEVICE="cappu"
+

@@ -42,8 +42,6 @@ qemu.hw.mainkeys=1
 
 ro.kernel.zio=38,108,105,16
 
-ro.sf.lcd_density=320
-
 # performance
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_response_time=1
@@ -60,3 +58,4 @@ ro.mtk_alps_box_support=0
 ro.mtk_hdmi_4k_support=1
 
 ro.product.board=cappu
+

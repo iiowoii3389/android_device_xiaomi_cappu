@@ -7,9 +7,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Device uses high-density artwork where available
 PRODUCT_CHARACTERISTICS := tablet
@@ -114,6 +114,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-impl \
+    libbt-vendor \
     audio.a2dp.default
 
 # Media

@@ -452,22 +452,17 @@ set_speaker_light_locked(__attribute__((__unused__)) struct light_device_t* dev,
     	red = green = blue = 0;
     }
 
-    if (red) {
-        blink_green(0, 0, 0);
-        blink_blue(0, 0, 0);
-        blink_red(red, onMS, offMS);
-    }
-    else if (green) {
+    /*
+     * Only a single-color LED is physically wired (green channel of the
+     * KTD2026 RGB controller). The red/blue outputs are unconnected, so
+     * route every request to the green LED regardless of the color the
+     * framework asked for.
+     */
+    if (red || green || blue) {
         blink_red(0, 0, 0);
         blink_blue(0, 0, 0);
-        blink_green(green, onMS, offMS);
-    }
-    else if (blue) {
-        blink_red(0, 0, 0);
-        blink_green(0, 0, 0);
-        blink_blue(blue, onMS, offMS);
-    }
-    else {
+        blink_green(255, onMS, offMS);
+    } else {
         blink_red(0, 0, 0);
         blink_green(0, 0, 0);
         blink_blue(0, 0, 0);

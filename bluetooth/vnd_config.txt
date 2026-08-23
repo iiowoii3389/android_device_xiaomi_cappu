@@ -1,0 +1,13 @@
+BLUETOOTH_UART_DEVICE_PORT = "/dev/ttyMT1"
+FW_PATCHFILE_LOCATION = "/vendor/firmware/bt"
+BTVND_DBG = FALSE
+BTHW_DBG = FALSE
+VNDUSERIAL_DBG = FALSE
+UPIO_DBG = FALSE
+# Tuned for the BCM4356 combo on MT8176 (cappu): with the kernel BT_DEV_WAKE
+# edge/lead-time fix the controller no longer sleeps during inter-command
+# gaps, so only short delays are needed for post-reset / post-firmware-launch
+# reboot readiness.  See include/bt_vendor_brcm.h for the pwr-settle default.
+FW_PATCH_SETTLEMENT_DELAY_MS = 100
+HW_POST_RESET_DELAY_MS = 50
+BT_VND_PWR_TURN_ON_DELAY_MS = 300

@@ -1,3 +1,16 @@
+# Single-color LED: only the green channel of the KTD2026 RGB controller is
+# connected. Make sure the HAL (system user) can write all green LED sysfs
+# nodes for both steady and timer-trigger blinking modes.
+on init
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/green/trigger
+    chown system system /sys/class/leds/green/delay_on
+    chown system system /sys/class/leds/green/delay_off
+    chmod 660 /sys/class/leds/green/brightness
+    chmod 660 /sys/class/leds/green/trigger
+    chmod 660 /sys/class/leds/green/delay_on
+    chmod 660 /sys/class/leds/green/delay_off
+
 service light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service-mediatek
     class hal
     user system

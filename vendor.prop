@@ -84,7 +84,7 @@ persist.radio.mtk_ps3_rat=G
 persist.log.tag.RILMUXD=I
 persist.log.tag.DCT=D
 mtk.vdec.waitkeyframeforplay=1
-ro.sys.sdcardfs=0
+ro.sys.sdcardfs=1
 debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
 ro.ksc5601_write=0
@@ -99,3 +99,16 @@ debug.sf.enable_hwc_vds=1
 ro.control_privapp_permissions=log
 ro.mtk_config_max_dram_size=0x100000000
 ro.mtk_f2fs_enable=0
+
+# Display
+ro.sf.lcd_density=320
+
+# temporary enables NAV bar (soft keys)
+qemu.hw.mainkeys=1
+
+
+# Bluetooth
+# The BCM4354 firmware download over the MTK UART is occasionally slow and is
+# retried internally by libbt-vendor (with a chip power cycle). Give the stack
+# enough startup headroom so a retry is not aborted by its 8s default timer.
+#bluetooth.enable_timeout_ms=40000
